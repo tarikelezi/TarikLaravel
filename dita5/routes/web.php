@@ -25,3 +25,5 @@ Route::get('/show',[ProjectController::class,'show'])->name('show');
 Route::get('/edit/{id}',[ProjectController::class,'edit'])->name('edit');
 Route::post('/update/{id}',[ProjectController::class,'update'])->name('update');
 Route::resource('todos', ProjectController::class);
+Route::get('/delete/{id}',[ProjectController::class,'destroy'])->name('delete');
+

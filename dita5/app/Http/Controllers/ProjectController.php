@@ -90,8 +90,15 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy (string $id)
     {
-        //
+        if(Todo::destroy($id))
+        {
+            return redirect()->route('home')->with('status','Todo eshte fshire me sukses');
+        }
+        else{
+            return redirect()->back()->with('status','Diqka eshte gabim ne fshirjen e Todo!');
+        }
+        
     }
 }
